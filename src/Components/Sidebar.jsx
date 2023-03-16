@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // ICONS
 
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -7,31 +7,21 @@ import { BsCalendarWeek, BsCalendarDay, BsCalendar2 } from "react-icons/bs";
 import { VscTools, VscClose } from "react-icons/Vsc";
 import { IoMdCheckboxOutline } from "react-icons/io";
 
-const Sidebar = ({ isOpen, handleClick, isActive, onClick }) => {
+const Sidebar = () => {
   const Menu = [
-    { title: "All", icon: <BsCalendar2 /> },
-    { title: "Today", icon: <BsCalendarDay /> },
-    { title: "Week", icon: <BsCalendarWeek /> },
-    { title: "Projects", icon: <VscTools /> },
+    { title: "All", icon: <BsCalendar2 />, to: "/" },
+    { title: "Today", icon: <BsCalendarDay />, to: "/today" },
+    { title: "Week", icon: <BsCalendarWeek />, to: "/week" },
+    { title: "Projects", icon: <VscTools />, to: "/projects" },
   ];
   return (
-    <div
-      className={`${
-        isOpen ? "w-[19]rem]" : "w-24 "
-      } fixed  z-10 h-screen bg-offWhite font-Comfortaa`}
-    >
-      {isOpen ? (
-        <div className="flex justify-center items-center text-5xl p-3">
-          <IoMdCheckboxOutline className="text-6xl" />
-          <span className="text-darkOrange">Task</span>Mate
-        </div>
-      ) : (
-        <div className="flex justify-center items-center text-6xl py-3 px-1">
-          <IoMdCheckboxOutline />
-        </div>
-      )}
+    <div className={`h-screen bg-offWhite font-Comfortaa w-64`}>
+      <div className="flex justify-center items-center text-4xl p-3 mt-4">
+        <IoMdCheckboxOutline className="text-5xl text-darkOrange" />
+        <span className="text-darkOrange">Task</span>Mate
+      </div>
 
-      <div
+      {/* <div
         className={`flex  items-center py-2 my-2 cursor-pointer  ${
           isOpen ? "justify-end pr-4" : "justify-center"
         }`}
@@ -42,23 +32,25 @@ const Sidebar = ({ isOpen, handleClick, isActive, onClick }) => {
         ) : (
           <RxHamburgerMenu className="text-4xl" />
         )}
-      </div>
+      </div> */}
 
       {Menu.map((menu, index) => (
         <div
           key={index}
-          className={`flex items-center  py-2 my-5 mx-8 gap-5 cursor-pointer rounded-lg  border-2 border-offWhite hover:border-darkOrange  ${
-            isOpen ? "pl-6" : "pl-0 justify-center"
-          }`}
+          className={`flex items-center py-2 my-2 gap-4 cursor-pointer rounded-lg hover:text-darkOrange  text-3xl`}
         >
-          {isOpen ? (
-            <>
-              <span className="text-[2.5rem]">{menu.icon}</span>
-              <span className="text-4xl">{menu.title}</span>
-            </>
-          ) : (
-            <span className="text-[2.5rem]">{menu.icon}</span>
-          )}
+          <NavLink
+            key={index}
+            to={menu.to}
+            className={({ isActive }) =>
+              isActive ? "text-darkOrange" : "text-black"
+            }
+          >
+            <div className="flex items-center gap-4 cursor-pointer rounded-lg hover:text-darkOrange  text-3xl w-64 px-8 py-2">
+              <span>{menu.icon}</span>
+              <span>{menu.title}</span>
+            </div>
+          </NavLink>
         </div>
       ))}
     </div>

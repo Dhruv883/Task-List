@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import Sidebar from "./Components/Sidebar";
+import Home from "./Components/Home";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
-  const [open, setOpen] = useState(true);
-  const [isActive, setIsActive] = useState(0);
-
-  function toggle() {
-    setOpen((open) => !open);
-  }
-
   return (
-    <div className="flex">
-      <Sidebar
-        isOpen={open}
-        handleClick={toggle}
-        isActive={isActive}
-        onClick={isActive}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="relative flex">
+        <Sidebar />
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            {/* <Route path="" element = { /}></Route>
+            <Route path="" element = { /}></Route>
+            <Route path="" element = { /}></Route>
+            <Route path="" element = { /}></Route> */}
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 };
 
