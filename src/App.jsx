@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./Components/Sidebar";
 import Home from "./Components/Home";
+import Projects from "./Components/Projects";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
@@ -11,10 +12,10 @@ const App = () => {
         <div>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            {/* <Route path="" element = { /}></Route>
-            <Route path="" element = { /}></Route>
-            <Route path="" element = { /}></Route>
-            <Route path="" element = { /}></Route> */}
+            {/* <Route path="/all" element = { /}></Route>
+            <Route path="/today" element = { /}></Route>
+            <Route path="/week" element = { /}></Route> */}
+            <Route path="/projects" element={<Projects />}></Route>
           </Routes>
         </div>
       </div>
