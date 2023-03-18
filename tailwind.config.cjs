@@ -12,6 +12,13 @@ module.exports = {
       },
       fontFamily: {
         Comfortaa: ["Comfortaa", "cursive"],
+        WorkSans: ["Work Sans", "sans-serif"],
+      },
+      backgroundImage: {
+        bgImage: "url('./public/low-poly-grid-haikei.svg')",
+      },
+      boxShadow: {
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
       },
     },
   },
