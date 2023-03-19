@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { VscTools } from "react-icons/Vsc";
 
-import ProjectModal from "./Modals/ProjectModal";
+import ProjectModal from "../Modals/ProjectModal";
 
 const Projects = () => {
   const [openModal, setOpenModal] = useState(false);

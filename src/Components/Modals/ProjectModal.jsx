@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 
 const ProjectModal = ({ setOpenModal }) => {
-  var [projectData, setProjectData] = useState({ title: "", type: "Work" });
+  var [projectData, setProjectData] = useState({ title: "", priority: "Low" });
 
   var [projects, setProjects] = useState(
     () => JSON.parse(localStorage.getItem("projects")) || []
@@ -26,15 +26,15 @@ const ProjectModal = ({ setOpenModal }) => {
     event.preventDefault();
     setProjects([
       ...projects,
-      { title: projectData.title, type: projectData.type },
+      { title: projectData.title, priority: projectData.priority },
     ]);
+
     setProjectData(() => {
       return {
         title: "",
-        type: "Work",
+        priority: "Low",
       };
     });
-    // setOpenModal(false);
   }
 
   return (
@@ -68,21 +68,24 @@ const ProjectModal = ({ setOpenModal }) => {
             />
           </div>
           <div className="mx-4 my-5">
-            <label htmlFor="type" className="block text-gray-700 text-2xl mb-2">
-              Project Type
+            <label
+              htmlFor="priority"
+              className="block text-gray-700 text-2xl mb-2"
+            >
+              Project Priority
             </label>
             <div className="relative">
               <select
-                name="type"
-                id="type"
-                value={projectData.type}
+                name="priority"
+                id="priority"
+                value={projectData.priority}
                 onChange={handleChange}
                 className="shadow border p-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
                 required
               >
-                <option>Work</option>
-                <option>Personal</option>
-                <option>Other</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
               </select>
             </div>
           </div>

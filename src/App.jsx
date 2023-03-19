@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./Components/Sidebar";
 import Home from "./Components/Home";
-import Projects from "./Components/Projects";
+import Projects from "./Components/Pages/Projects";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
