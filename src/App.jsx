@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Sidebar from "./Components/Sidebar";
 import Home from "./Components/Home";
 import Projects from "./Components/Pages/Projects";
+import ProjectDetails from "./Components/Pages/ProjectDetails";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/today" element = { /}></Route>
             <Route path="/week" element = { /}></Route> */}
             <Route path="/projects" element={<Projects />}></Route>
+            <Route path="/projects:id" element={<ProjectDetails />}></Route>
           </Routes>
         </div>
       </div>

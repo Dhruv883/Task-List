@@ -23,7 +23,6 @@ const ProjectModal = ({ setOpenModal }) => {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
     setProjects([
       ...projects,
       { title: projectData.title, priority: projectData.priority },
@@ -61,6 +60,7 @@ const ProjectModal = ({ setOpenModal }) => {
               name="title"
               type="text"
               id="title"
+              maxLength={40}
               value={projectData.title}
               className="shadow appearance-none border p-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
               onChange={handleChange}
@@ -72,7 +72,7 @@ const ProjectModal = ({ setOpenModal }) => {
               htmlFor="priority"
               className="block text-gray-700 text-2xl mb-2"
             >
-              Project Priority
+              Priority
             </label>
             <div className="relative">
               <select

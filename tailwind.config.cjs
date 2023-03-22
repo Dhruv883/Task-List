@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        grey: "#888788",
-        darkGrey: "#73777B",
         offWhite: "#f9f9f9",
         darkOrange: "#f99638",
-        yellow: "#fec90f",
+        lowPriority: "#c9f9cd",
+        medPriority: "#f9edc8",
+        highPriority: "#f9dfc8",
       },
       fontFamily: {
         Comfortaa: ["Comfortaa", "cursive"],
