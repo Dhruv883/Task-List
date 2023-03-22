@@ -41,7 +41,7 @@ const Projects = () => {
         {openModal && <ProjectModal setOpenModal={setOpenModal} />}
       </div>
 
-      <div className="py-1 pl-3 max-h-[67vh] flex flex-wrap overflow-y-scroll gap-x-4 gap-y-5 border border-red-500 ">
+      <div className="py-1 pl-3 max-h-[67vh] flex flex-wrap overflow-y-scroll gap-x-4 gap-y-5">
         {projects.map((project, index) => {
           return (
             <ProjectCard

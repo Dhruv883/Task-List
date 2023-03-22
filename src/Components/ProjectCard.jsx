@@ -2,20 +2,20 @@ import React from "react";
 import { MdOutlineDelete } from "react-icons/md";
 
 const ProjectCard = ({ title, priority, handleDelete, id }) => {
-  const bgCol = {
-    Low: "lowPriority",
-    Medium: "medPriority",
-    High: "highPriority",
-  };
+  // const bgCol = {
+  //   Low: "lowPriority",
+  //   Medium: "medPriority",
+  //   High: "highPriority",
+  // };
 
   return (
     <div
-      className={`bg-${bgCol[priority]} w-80 p-2 rounded-3xl cursor-pointer 
-    overflow-hidden max-h-64 font-Comfortaa font-medium`}
+      className={`bg-projectBg bg-cover bg-no-repeat w-80 p-2 rounded-3xl cursor-pointer 
+    overflow-hidden max-h-64 font-Comfortaa font-medium text-white`}
     >
       <div className="text-2xl flex items-center justify-end text-black">
         <div
-          className="hover:bg-[rgba(250,250,250,0.1)] rounded-full p-2"
+          className="hover:bg-[rgba(250,250,250,0.1)] rounded-full p-2 text-darkOrange"
           onClick={() => {
             handleDelete(id);
           }}

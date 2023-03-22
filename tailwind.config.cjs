@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundImage: {
         bgImage: "url('./public/low-poly-grid-haikei.svg')",
+        projectBg: "url('./public/blob-haikei.svg')",
       },
       boxShadow: {
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
