@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { VscTools } from "react-icons/Vsc";
 
-import ProjectModal from "../Modals/ProjectModal";
-import ProjectCard from "../ProjectCard";
+import ProjectModal from "./Modals/ProjectModal";
+import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -24,14 +24,14 @@ const Projects = () => {
     <div className="h-full w-[calc(100vw-256px)]">
       <div
         className="flex justify-center items-center gap-4 text-6xl p-10 
-      bg-bgImage text-white font-thin font-Comfortaa "
+      bg-bgImage text-white font-QuickSand font-normal"
       >
         <VscTools />
         Projects
       </div>
       <div className="p-3">
         <button
-          className="px-3 py-2 text-xl bg-darkOrange text-white rounded-xl"
+          className="px-3 py-2 text-2xl bg-darkOrange text-white rounded-xl font-QuickSand font-medium"
           onClick={() => {
             setOpenModal(true);
           }}
@@ -41,7 +41,7 @@ const Projects = () => {
         {openModal && <ProjectModal setOpenModal={setOpenModal} />}
       </div>
 
-      <div className="py-1 pl-3 max-h-[67vh] flex flex-wrap overflow-y-scroll gap-x-4 gap-y-5">
+      <div className="p-5 max-h-[67vh] flex flex-wrap overflow-y-scroll gap-5">
         {projects.map((project, index) => {
           return (
             <ProjectCard

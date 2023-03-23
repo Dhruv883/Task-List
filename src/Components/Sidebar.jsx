@@ -15,7 +15,7 @@ const Sidebar = () => {
     { title: "Projects", icon: <VscTools />, to: "/projects" },
   ];
   return (
-    <div className={`h-screen bg-offWhite font-Comfortaa w-64`}>
+    <div className={`h-screen bg-offWhite font-QuickSand font-medium w-64`}>
       <div className="flex justify-center items-center text-4xl p-3 mt-4 cursor-default">
         <IoMdCheckboxOutline className="text-5xl text-darkOrange" />
         <span className="text-darkOrange">Task</span>Mate
@@ -37,7 +37,7 @@ const Sidebar = () => {
       {Menu.map((menu, index) => (
         <div
           key={index}
-          className={`flex items-center py-2 my-2 gap-4 cursor-pointer rounded-lg hover:text-darkOrange  text-3xl`}
+          className={`flex items-center py-2 my-2 gap-4 cursor-pointer rounded-lg hover:text-darkOrange`}
         >
           <NavLink
             key={index}
@@ -46,7 +46,7 @@ const Sidebar = () => {
               isActive ? "text-darkOrange" : "text-black"
             }
           >
-            <div className="flex items-center gap-4 cursor-pointer rounded-lg hover:text-darkOrange  text-3xl w-64 px-8 py-2">
+            <div className="flex items-center gap-5 cursor-pointer rounded-lg hover:text-darkOrange text-4xl w-64 px-8 py-2">
               <span>{menu.icon}</span>
               <span>{menu.title}</span>
             </div>
