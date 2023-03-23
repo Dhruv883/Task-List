@@ -4,7 +4,7 @@ import { VscTools } from "react-icons/Vsc";
 import TaskModal from "./Modals/TaskModal";
 const ProjectDetails = () => {
   const { id } = useParams();
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
   var [projects, setProjects] = useState(
     () => JSON.parse(localStorage.getItem("projects")) || []
@@ -22,6 +22,7 @@ const ProjectDetails = () => {
         </div>
 
         <div className="p-3">
+          {/* <div>Tasks - </div> */}
           <button
             className="px-3 py-2 text-2xl bg-darkOrange text-white rounded-xl"
             onClick={() => {

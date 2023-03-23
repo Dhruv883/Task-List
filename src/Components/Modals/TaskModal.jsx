@@ -12,19 +12,19 @@ const TaskModal = ({ setOpenModal }) => {
     dueDate: "",
   });
 
-  var [projects, setProjects] = useState(() =>
+  const [projects, setProjects] = useState(() =>
     JSON.parse(localStorage.getItem("projects"))
   );
 
-  var [tasks1, setTasks1] = useState(projects[id].tasks);
+  const [allTasks, setAllTasks] = useState(projects[id].tasks);
 
   useEffect(() => {
     setProjects((prev) => {
       const projs = [...prev];
-      projs[id].tasks = [...tasks1];
+      projs[id].tasks = [...allTasks];
       return projs;
     });
-  }, [tasks1]);
+  }, [allTasks]);
 
   useEffect(() => {
     localStorage.setItem("projects", JSON.stringify(projects));
@@ -44,8 +44,8 @@ const TaskModal = ({ setOpenModal }) => {
     event.preventDefault();
     // location.reload();
 
-    setTasks1([
-      ...tasks1,
+    setAllTasks([
+      ...allTasks,
       {
         title: taskData.title,
         priority: taskData.priority,
