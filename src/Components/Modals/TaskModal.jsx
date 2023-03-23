@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
+import { useParams } from "react-router-dom";
 
 const TaskModal = ({ setOpenModal }) => {
+  const { id } = useParams();
+
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
-    priority: "",
+    priority: "Low",
     dueDate: "",
   });
 
-  var [projects, setProjects] = useState(
-    () => JSON.parse(localStorage.getItem("projects")) || []
+  var [projects, setProjects] = useState(() =>
+    JSON.parse(localStorage.getItem("projects"))
   );
+
+  var [tasks1, setTasks1] = useState(projects[id].tasks);
+
+  useEffect(() => {
+    setProjects((prev) => {
+      const projs = [...prev];
+      projs[id].tasks = [...tasks1];
+      return projs;
+    });
+  }, [tasks1]);
+
+  useEffect(() => {
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }, [projects]);
 
   function handleChange(event) {
     var { name, value } = event.target;
@@ -25,21 +42,22 @@ const TaskModal = ({ setOpenModal }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    location.reload();
-    // setTaskData([
-    //   ...tasks,
-    //   {
-    //     title: taskData.title,
-    //     priority: taskData.priority,
-    //     description: taskData.description,
-    //     dueDate: taskData.dueDate,
-    //   },
-    // ]);
+    // location.reload();
+
+    setTasks1([
+      ...tasks1,
+      {
+        title: taskData.title,
+        priority: taskData.priority,
+        description: taskData.description,
+        dueDate: taskData.dueDate,
+      },
+    ]);
 
     setTaskData(() => {
       return {
         title: "",
-        priority: "",
+        priority: "Low",
         description: "",
         dueDate: "",
       };
