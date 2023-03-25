@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 import { MdOutlineDelete } from "react-icons/md";
 
 const ProjectCard = ({ title, priority, handleDelete, id }) => {
-  // const bgCol = {
-  //   Low: "lowPriority",
-  //   Medium: "medPriority",
-  //   High: "highPriority",
-  // };
-
   return (
     <div
       key={id}
-      className={`bg-projectBg bg-cover bg-no-repeat w-80 p-2 rounded-3xl cursor-pointer 
+      className={`bg-projectBg bg-cover bg-no-repeat w-[310px] p-2 rounded-3xl cursor-pointer 
     overflow-hidden max-h-64 font-QuickSand font-medium text-white`}
     >
       <div className="text-2xl flex items-center justify-end text-black">

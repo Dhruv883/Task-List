@@ -6,9 +6,8 @@ module.exports = {
       colors: {
         offWhite: "#f9f9f9",
         darkOrange: "#f99638",
-        lowPriority: "#c9f9cd",
-        medPriority: "#f9edc8",
-        highPriority: "#f9dfc8",
+        lightgrey: "#F7F7F7",
+        darkGrey: "#757575",
       },
       fontFamily: {
         Comfortaa: ["Comfortaa", "cursive"],

@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative flex">
+      <div className="relative flex overflow-hidden">
         <Sidebar />
         <div>
           <Routes>

@@ -10,6 +10,7 @@ const TaskModal = ({ setOpenModal }) => {
     description: "",
     priority: "Low",
     dueDate: "",
+    projectId: id,
   });
 
   const [projects, setProjects] = useState(() =>
@@ -42,7 +43,7 @@ const TaskModal = ({ setOpenModal }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // location.reload();
+    location.reload();
 
     setAllTasks([
       ...allTasks,
@@ -51,6 +52,7 @@ const TaskModal = ({ setOpenModal }) => {
         priority: taskData.priority,
         description: taskData.description,
         dueDate: taskData.dueDate,
+        projectId: id,
       },
     ]);
 
@@ -89,9 +91,9 @@ const TaskModal = ({ setOpenModal }) => {
               name="title"
               type="text"
               id="title"
-              maxLength={30}
+              maxLength={50}
               value={taskData.title}
-              className="shadow appearance-none border p-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
+              className="shadow appearance-none border p-1 px-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
               onChange={handleChange}
               required
             />
@@ -112,7 +114,7 @@ const TaskModal = ({ setOpenModal }) => {
               rows="3"
               maxLength={100}
               onChange={handleChange}
-              className="shadow border w-full h-28 resize-none text-xl py-3 px-2 rounded text-gray-500 outline-none focus-within:border-darkOrange"
+              className="shadow border w-full h-28 resize-none text-xl py-1 px-2 rounded text-gray-500 outline-none focus-within:border-darkOrange"
               required
             ></textarea>
           </div>
@@ -130,7 +132,7 @@ const TaskModal = ({ setOpenModal }) => {
               value={taskData.dueDate}
               id="dueDate"
               onChange={handleChange}
-              className="shadow appearance-none border p-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
+              className="shadow appearance-none border py-1 px-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
               required
             />
           </div>
@@ -148,7 +150,7 @@ const TaskModal = ({ setOpenModal }) => {
                 id="priority"
                 value={taskData.priority}
                 onChange={handleChange}
-                className="shadow border p-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
+                className="shadow border py-1 px-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
                 required
               >
                 <option>Low</option>
@@ -158,10 +160,9 @@ const TaskModal = ({ setOpenModal }) => {
             </div>
           </div>
 
-          <div className="block border border-gray-200  my-8 mx-4"></div>
-          <div className="flex items-center justify-end gap-5 px-0 m-4">
+          <div className="flex items-center justify-end gap-5 px-0 m-4 mt-6">
             <button
-              className="px-4 py-2 text-xl border border-grey rounded-md"
+              className="px-4 py-2 text-2xl border border-grey rounded-md"
               onClick={() => {
                 setOpenModal(false);
               }}
