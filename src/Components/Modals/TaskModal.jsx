@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useParams } from "react-router-dom";
+import { format } from "date-fns";
 
 const TaskModal = ({ setOpenModal }) => {
   const { id } = useParams();
+
+  const date = new Date();
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  let currentDate = `${day}-${month}-${year}`;
 
   const [taskData, setTaskData] = useState({
     title: "",
@@ -11,6 +20,7 @@ const TaskModal = ({ setOpenModal }) => {
     priority: "Low",
     dueDate: "",
     projectId: id,
+    status: false,
   });
 
   const [projects, setProjects] = useState(() =>
@@ -53,6 +63,7 @@ const TaskModal = ({ setOpenModal }) => {
         description: taskData.description,
         dueDate: taskData.dueDate,
         projectId: id,
+        status: false,
       },
     ]);
 
@@ -62,6 +73,7 @@ const TaskModal = ({ setOpenModal }) => {
         priority: "Low",
         description: "",
         dueDate: "",
+        status: false,
       };
     });
   }
@@ -131,8 +143,9 @@ const TaskModal = ({ setOpenModal }) => {
               type="date"
               value={taskData.dueDate}
               id="dueDate"
+              min={currentDate}
               onChange={handleChange}
-              className="shadow appearance-none border py-1 px-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl"
+              className="shadow appearance-none border py-1 px-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl uppercase"
               required
             />
           </div>

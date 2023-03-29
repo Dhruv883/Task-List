@@ -46,6 +46,7 @@ const ProjectDetails = () => {
                 description={task.description}
                 dueDate={task.dueDate}
                 priority={task.priority}
+                status={task.status}
                 projectId={task.projectId}
                 id={index}
                 // handleDelete={handleDelete}
