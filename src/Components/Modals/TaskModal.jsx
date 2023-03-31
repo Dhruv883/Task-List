@@ -6,14 +6,6 @@ import { format } from "date-fns";
 const TaskModal = ({ setOpenModal }) => {
   const { id } = useParams();
 
-  const date = new Date();
-
-  let day = date.getDate();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
-
-  let currentDate = `${day}-${month}-${year}`;
-
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
@@ -143,7 +135,6 @@ const TaskModal = ({ setOpenModal }) => {
               type="date"
               value={taskData.dueDate}
               id="dueDate"
-              min={currentDate}
               onChange={handleChange}
               className="shadow appearance-none border py-1 px-2 w-full rounded text-gray-500 outline-none focus-within:border-darkOrange text-xl uppercase"
               required
