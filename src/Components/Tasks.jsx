@@ -18,7 +18,7 @@ const Tasks = ({
   const [taskInfo, setTaskInfo] = useState(false);
 
   const [projects, setProjects] = useState(() =>
-    JSON.parse(localStorage.getItem("projects"))
+    JSON.parse(localStorage.getItem("projects") || [])
   );
 
   const [allTasks, setAllTasks] = useState(projects[projectId].tasks);

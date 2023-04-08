@@ -6,7 +6,7 @@ import Tasks from "./Tasks";
 
 const Week = () => {
   const [projects, setProjects] = useState(() =>
-    JSON.parse(localStorage.getItem("projects"))
+    JSON.parse(localStorage.getItem("projects") || [])
   );
 
   return (
