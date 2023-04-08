@@ -27,8 +27,8 @@ const ProjectModal = ({ setOpenModal }) => {
   }
 
   function handleSubmit(event) {
-    // event.preventDefault();
-    // location.reload();
+    event.preventDefault();
+    location.reload();
     setProjects([
       ...projects,
       { title: projectData.title, priority: projectData.priority, tasks: [] },
