@@ -9,10 +9,10 @@ import { IoMdCheckboxOutline } from "react-icons/io";
 
 const Sidebar = () => {
   const Menu = [
-    { title: "All", icon: <BsCalendar2 />, to: "/" },
-    { title: "Today", icon: <BsCalendarDay />, to: "/today" },
-    { title: "Week", icon: <BsCalendarWeek />, to: "/week" },
-    { title: "Projects", icon: <VscTools />, to: "/projects" },
+    { title: "All", icon: <BsCalendar2 />, to: "" },
+    { title: "Today", icon: <BsCalendarDay />, to: "today" },
+    { title: "Week", icon: <BsCalendarWeek />, to: "week" },
+    { title: "Projects", icon: <VscTools />, to: "projects" },
   ];
   return (
     <div className={`h-screen bg-offWhite font-QuickSand font-medium w-64`}>
@@ -20,19 +20,6 @@ const Sidebar = () => {
         <IoMdCheckboxOutline className="text-5xl text-darkOrange" />
         <span className="text-darkOrange">Task</span>Mate
       </div>
-
-      {/* <div
-        className={`flex  items-center py-2 my-2 cursor-pointer  ${
-          isOpen ? "justify-end pr-4" : "justify-center"
-        }`}
-        onClick={handleClick}
-      >
-        {isOpen ? (
-          <VscClose className="text-6xl" />
-        ) : (
-          <RxHamburgerMenu className="text-4xl" />
-        )}
-      </div> */}
 
       {Menu.map((menu, index) => (
         <div

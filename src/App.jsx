@@ -14,12 +14,12 @@ const App = () => {
         <Sidebar />
         <div>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/all" element={<Home />}></Route>
-            <Route path="/today" element={<Today />}></Route>
-            <Route path="/week" element={<Week />}></Route>
-            <Route path="/projects" element={<Projects />}></Route>
-            <Route path="/projects/:id" element={<ProjectDetails />}></Route>
+            <Route path="" element={<Home />}></Route>
+            <Route path="all" element={<Home />}></Route>
+            <Route path="today" element={<Today />}></Route>
+            <Route path="week" element={<Week />}></Route>
+            <Route path="projects" element={<Projects />}></Route>
+            <Route path="projects/:id" element={<ProjectDetails />}></Route>
           </Routes>
         </div>
       </div>

@@ -19,7 +19,7 @@ const ProjectCard = ({ title, priority, handleDelete, id }) => {
           <MdOutlineDelete></MdOutlineDelete>
         </div>
       </div>
-      <Link to={`/projects/${id}`}>
+      <Link to={`${id}`}>
         <div className="text-3xl px-3 py-1 overflow-hidden h-[72px]">
           {title}
         </div>
