@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { VscTools } from "react-icons/Vsc";
+import { VscTools } from "react-icons/vsc";
 
 import ProjectModal from "./Modals/ProjectModal";
 import ProjectCard from "./ProjectCard";

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // ICONS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { BsCalendarWeek, BsCalendarDay, BsCalendar2 } from "react-icons/bs";
-import { VscTools, VscClose } from "react-icons/Vsc";
+import { VscTools, VscClose } from "react-icons/vsc";
 import { IoMdCheckboxOutline } from "react-icons/io";
 
 const Sidebar = () => {

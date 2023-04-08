@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { VscTools } from "react-icons/Vsc";
+import { VscTools } from "react-icons/vsc";
 import TaskModal from "./Modals/TaskModal";
 import Tasks from "./Tasks";
 
