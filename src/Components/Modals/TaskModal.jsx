@@ -45,7 +45,7 @@ const TaskModal = ({ setOpenModal }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    location.reload();
+    // location.reload();
 
     setAllTasks([
       ...allTasks,

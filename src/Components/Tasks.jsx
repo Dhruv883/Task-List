@@ -24,7 +24,7 @@ const Tasks = ({
   const [allTasks, setAllTasks] = useState(projects[projectId].tasks);
 
   function handleClick() {
-    location.reload();
+    // location.reload();
     setAllTasks((prev) => {
       const prevTask = [...prev];
       prevTask[id].status = !status;
