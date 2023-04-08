@@ -18,7 +18,7 @@ const Sidebar = () => {
     <div className={`h-screen bg-offWhite font-QuickSand font-medium w-64`}>
       <div className="flex justify-center items-center text-4xl p-3 mt-4 cursor-default">
         <IoMdCheckboxOutline className="text-5xl text-darkOrange" />
-        <span className="text-darkOrange">Task</span>List
+        <span className="text-darkOrange">Task</span>Mate
       </div>
 
       {/* <div
