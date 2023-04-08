@@ -3,8 +3,8 @@ import { BsCalendarDay } from "react-icons/bs";
 import format from "date-fns/format";
 import Tasks from "./Tasks";
 const Today = () => {
-  const [projects, setProjects] = useState(() =>
-    JSON.parse(localStorage.getItem("projects") || [])
+  var [projects, setProjects] = useState(
+    () => JSON.parse(localStorage.getItem("projects")) || []
   );
 
   const date = new Date();

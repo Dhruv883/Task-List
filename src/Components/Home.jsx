@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Tasks from "./Tasks";
 import { BsCalendar2 } from "react-icons/bs";
 const Home = () => {
-  const [projects, setProjects] = useState(() =>
-    JSON.parse(localStorage.getItem("projects") || [])
+  var [projects, setProjects] = useState(
+    () => JSON.parse(localStorage.getItem("projects")) || []
   );
 
   return (

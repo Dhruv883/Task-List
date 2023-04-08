@@ -5,8 +5,8 @@ import add from "date-fns/add";
 import Tasks from "./Tasks";
 
 const Week = () => {
-  const [projects, setProjects] = useState(() =>
-    JSON.parse(localStorage.getItem("projects") || [])
+  var [projects, setProjects] = useState(
+    () => JSON.parse(localStorage.getItem("projects")) || []
   );
 
   return (
